@@ -1,8 +1,19 @@
 language: node_js
-
+services:
+  - docker
 node_js:
-  - "stable"
-
+  - stable
 cache:
   directories:
-    - "node_modules"
+    - node_modules
+deploy:
+  provider: script
+  script: bash docker-deploy.sh
+  skip_cleanup: true
+  on:
+    repo: hubcodes/shuck
+    tags: true
+env:
+  global:
+    - secure: TJi6HFaNfvIT8lHFl/tfKhnnvvvQg2xG+HQS3GK5CgxlaY1gIh+UDFHJFt8k6c5zEJ3aFlCdpfNA945CSpy0hr/tCUd7f20yrPhaosbjYjriJEAAOFR3B11SKvToFUka+ysXLSOoenXSzlyfwdx2KJlmOwDVe/PGAL4CwWIl8q74YmquDiR8L9tGgKQCceQQBH7Yhnrj5y2eWkCW6QBKquFwf5IYztUw1vfdiug8n6sATNpmZgVoCeR8HdrFqcYw+1ycd48n2toOgaeXXPlADQE+SNfkxpA+qyr6c9TQwafExFCX1wN6A9HWgw0J5yHuDzuQbIQGAmkr/2wh8VyN6Lppcwq2Ed9MtDZKItZb88wpTNCY4UwAxSo9vqsNa0Sy2PVYqDESwrLxpshxL4RtdPz2ca+NlucVc9F8ya6JOLBYpT7dJHr5hi0gs4N/VTF23Sr6zHB3U53idbshGENuzMSebR9lAg26vnerTtwe/8Z7VTsYmmLkHLxdsQxXuobJteq58QnXgcraES1GXbb+a6eugU1It63VHXaGdwYubL9WpYeCdvGppFruAdP+TeXMosQffzTDrI/IAuMOR34OI6P7Romy8zH/jrdW4z8JbyUc9sZyiqEx1UxjobOPF7GjzD6lpeGU2bv1aa3zciF5GJjOTmzlyv8G0n0KCndgkjs=
+    - secure: liJOBYFlKpFEFANvB8ySiuf3OQn6655OniNcYPGTWa4uJ9iiczo2SQNzFPToIeUndbCMfmLYpA5iPMYlkea/ltivR7QNwb588PpvXjIzJzr+9MGKP5UBUk98RwDbvom9uM6/MbYJiDyxCWcgEQSKnc+qor4mPKI82J7FFxdbAFUSeuSMhmGwIX+x+KFgZc2fDUSEk0Ym60tc7prtjwQS345PEfUvTutwqzNgaZ8X2blHzGdR/prRjdaqbhHijzzg8Oi6Gz7pmnjwpcd6JKtOf86JQriN/A9vRogauxR0i5/WqamgqIqHQPGgCLjKljOiCVmDXMQJqXehoIwZ4sLMOdj00fKegWQsdbNFJtgffeo20DqumJTrUT+m/l9mV3cQgEoValcCC/jxK06MhfYhsu1YEkHmBhxrnRT1a9rxHwZIrFpl3Uita9fDOjiyhLF0wILtxwRVr6ibb36sPkRjhDtjspzLOF9pq5MdL4zySj6N7M6jqw2itmH9ANTep9GohNmpINKQdPFq91KZHCbH6T9q0/ww38yLWjjlUa0td9b+yGkJXX88bG1b2Q5I+6JOr5SPL/9H8myenhGMhRgnEhstBgeRHh9mGUFXfuDRAuevUlTf021Mg4kzxV+6sUMTCqqnv120VtzMrFBtW2TQTjH+4s0zV2ryy/5xjU4ku3g=
