@@ -5,3 +5,5 @@ docker tag registry.entrydsm.hs.kr:5000/shuck:0.0.1 registry.entrydsm.hs.kr:5000
 
 docker push registry.entrydsm.hs.kr:5000/shuck:0.0.1 
 docker push registry.entrydsm.hs.kr:5000/shuck:latest
+
+exit
