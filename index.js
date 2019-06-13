@@ -7,7 +7,7 @@ app.get("/", (_, res) => {
 });
 
 app.get("/hello", (_, res) => {
-  res.send("Good job.");
+  res.send("Good job!");
 });
 
 const server = app.listen(20800, () => {
